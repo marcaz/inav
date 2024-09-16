@@ -262,6 +262,8 @@ typedef struct positionEstimationConfig_s {
     float baro_epv;             // Baro position error
 
     uint8_t default_alt_sensor; // default altitude sensor source
+    
+    float acc_weight;   // Sets the fixed accelerometer weight. If set to 0, it's value will be determined automatically according to vibrations and clipping
 #ifdef USE_GPS_FIX_ESTIMATION
     uint8_t allow_gps_fix_estimation;
 #endif

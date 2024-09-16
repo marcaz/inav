@@ -2475,6 +2475,12 @@ groups:
         default_value: "GPS"
         field: default_alt_sensor
         table: default_altitude_source
+      - name: acc_weight
+        description: "Determines the accelerometer weight. If set to zero, then its value will be automatically set according to vibration levels and clipping (ranging from 0.3 to 1.0)"
+        default_value: 0.0
+        field: acc_weight
+        min: 0
+        max: 10
 
   - name: PG_NAV_CONFIG
     type: navConfig_t
