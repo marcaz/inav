@@ -643,7 +643,7 @@ static bool estimationCalculateCorrection_Z(estimationContext_t * ctx)
             ctx->estVelCorr.z += gpsAltResidual * sq(w_z_gps_p) * ctx->dt;
             ctx->estVelCorr.z += gpsVelZResidual * positionEstimationConfig()->w_z_gps_v * ctx->dt;
 
-            ctx->newEPV = updateEPE(posEstimator.est.epv, ctx->dt, MAX(posEstimator.gps.epv, gpsAltResidual), w_z_gps_p);
+            ctx->newEPV = updateEPE(posEstimator.est.epv, ctx->dt, MAX(posEstimator.gps.epv, fabsf(gpsAltResidual)), w_z_gps_p);
 
             // Accelerometer bias
             ctx->accBiasCorr.z -= gpsAltResidual * sq(w_z_gps_p);
